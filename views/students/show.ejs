@@ -1,0 +1,42 @@
+<% layout("/layout/boilerplate") %>
+
+<body>
+
+    <% function formatDate(dateString) {
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const monthIndex = date.getMonth();
+        const year = date.getFullYear();
+        return `${day}-${monthNames[monthIndex]}-${year}`;
+    } %>
+
+
+    <h3>Student name: <%= student.first_name %> <%= student.last_name %> </h3>
+    <p>
+        Enrollment no.: <%= student.enrollment_number %> 
+        <br>
+        Enrollment Date:  <%= formatDate(student.enrollment_date) %>
+        <br>
+        Email: <%= student.email %>
+        <br>
+        DOB: <%= formatDate(student.date_of_birth) %>
+        <br>
+        Address: <%= student.address %>
+        <br>
+        Phone no.: <%= student.phone_number %>
+        <br>
+        Gender: <%= student.gender %>
+        <br>
+        Course: <%= student.course_name %>
+    </p>
+
+    <div class="show-action-btn">
+        <a href="/students/<%= student._id %>/edit" class="btn btn-info">Edit</a>
+
+        <form method="post" action="/students/<%= student._id %>?_method=DELETE">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+    
+</body>

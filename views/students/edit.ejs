@@ -1,0 +1,79 @@
+<% layout("/layout/boilerplate") %>
+<body>
+    <center>
+        <div class="form-div">
+    <form method="post" action="/students/<%= student._id %>?_method=PUT">
+        <div class="mb-3">
+            <label for="enrollment_number" class="form-label">Enrollment no.</label>
+            <input type="text" name="student[enrollment_number]" placeholder="E21113535500001" value="<%= student.enrollment_number %>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="enrollment_date" class="form-label">Enrollment Date</label>
+            <input type="date" name="student[enrollment_date]" value="<%= student.enrollment_date.toISOString().split('T')[0] %>" class="form-control" required>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" name="student[first_name]" value="<%= student.first_name %>" placeholder="Jone" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" name="student[last_name]" value="<%= student.last_name %>" placeholder="Since" class="form-control">
+            </div>  
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="student[email]" value="<%= student.email %>" placeholder="example@mail.com" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="date_of_birth" class="form-label">Date of birth</label>
+            <input type="date" name="student[date_of_birth]" value="<%= student.date_of_birth.toISOString().split('T')[0] %>" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" name="student[address]" value="<%= student.address %>" placeholder="Noida, Ghaziabad" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone no.</label>
+            <input type="text" name="student[phone_number]" value="<%= student.phone_number %>" placeholder="1234567980" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select name="student[gender]" id="gender" class="form-control" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="course_name" class="form-label">Course</label>
+            <select name="student[course_name]" id="course_name" class="form-control" required>
+                <option value="">Select Course</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+                <option value="ME">ME</option>
+                <option value="Civil">Civil</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Electrical">Electrical</option>
+            </select>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-2"><button type="submit" class="btn btn-success">Edit Student</button></div>
+            <!-- <div class="col-1"><button type="reset" class="btn btn-danger">Reset</button></div> -->
+            
+        </div>
+    </form>
+    </div>
+    </center>
+</body>
+
