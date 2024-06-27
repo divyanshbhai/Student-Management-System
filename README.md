@@ -18,3 +18,5 @@ It will take some time to install all required packages.
 ```
 npm app.js
 ```
+
+[localhost 8080](http://localhost:8080/)
