@@ -13,6 +13,8 @@ npm install express, mongoose, ejs, ejs-mate, method-override
 ```
 It will take some time to install all required packages.
 
+
+## Data Initialization
 ```bash
 cd init
 ```
